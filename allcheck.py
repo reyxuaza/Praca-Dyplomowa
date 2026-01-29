@@ -6,7 +6,7 @@ import glob
 import shutil
 
 # =============================================================================
-# 1. ALGORYTMY BIOMETRYCZNE (Bez zmian)
+# 1. ALGORYTMY BIOMETRYCZNE
 # =============================================================================
 
 def log_gabor_filter(rows, cols, wavelength, orientation, sigma_on_f, dThetaOnSigma):
