@@ -535,8 +535,8 @@ def check_specific_folder(folder_path):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Użycie:")
-        print("  1. Skanowanie folderów: python3 bi.py <folder_data>")
-        print("  2. Podgląd folderu:     python3 bi.py --check <sciezka_do_folderu>")
+        print("  1. Skanowanie folderów: python3 allcheck.py <folder_data>")
+        print("  2. Podgląd folderu:     python3 allcheck.py --check <sciezka_do_folderu>")
         sys.exit(1)
 
     arg1 = sys.argv[1]
