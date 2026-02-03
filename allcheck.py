@@ -319,7 +319,7 @@ def process_dataset_pairs(root_dir):
             subject_str = str(subject_id)
             full_subject_path = os.path.join(root_dir, subject_str)
             if not os.path.isdir(full_subject_path): continue
-            print(f"➡️ Analiza ID: {subject_id}...")
+            print(f"Analiza ID: {subject_id}...")
 
             for side in ['left', 'right']:
                 side_path = os.path.join(full_subject_path, side)
