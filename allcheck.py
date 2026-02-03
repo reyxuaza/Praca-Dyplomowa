@@ -373,7 +373,7 @@ def process_dataset_pairs(root_dir):
                     line = f"{subject_id}_{side};{wA};{wB};{min_hd_std:.4f};{best_dil:.4f}\n"
                     f_out.write(line)
                     f_out.flush()
-    print(f"\n✅ Zakończono! Wyniki zapisano w: {output_file}")
+    print(f"\n Zakończono! Wyniki zapisano w: {output_file}")
 
 def check_specific_folder(folder_path):
     """
@@ -397,11 +397,11 @@ def check_specific_folder(folder_path):
         images_paths.extend(glob.glob(os.path.join(folder_path, ext)))
     
     if len(images_paths) < 2:
-        print("❌ Za mało zdjęć w folderze (min. 2).")
+        print("Za mało zdjęć w folderze (min. 2).")
         return
 
     # 1. Znajdź najlepszą parę w Standardzie
-    print("⏳ Szukanie najlepszej pary w folderze...")
+    print("Szukanie najlepszej pary w folderze...")
     best_hd = 1.0
     best_pair_files = (None, None)
     
@@ -435,10 +435,10 @@ def check_specific_folder(folder_path):
     pathA, pathB = best_pair_files
     nameA = os.path.basename(pathA)
     nameB = os.path.basename(pathB)
-    print(f"✅ Najlepsza para: {nameA} vs {nameB} (HD: {best_hd:.4f})")
+    print(f"Najlepsza para: {nameA} vs {nameB} (HD: {best_hd:.4f})")
 
     # 2. Sprawdź Dylację dla zwycięzców i pobierz WIZUALIZACJE (Viz)
-    print("⏳ Generowanie wizualizacji segmentacji...")
+    print("Generowanie wizualizacji segmentacji...")
     
     imgA = loaded_imgs[pathA]
     imgB = loaded_imgs[pathB]
@@ -483,7 +483,7 @@ def check_specific_folder(folder_path):
     
     # Upewnij się, że mamy obrazy
     if vizA is None or vizB is None or img_viz_Dil_Row1 is None:
-        print("❌ Błąd generowania wizualizacji.")
+        print("Błąd generowania wizualizacji.")
         return
 
     # Kopiujemy, żeby nie pisać po oryginałach w pamięci
@@ -527,7 +527,7 @@ def check_specific_folder(folder_path):
     
     save_path = os.path.join(output_dir, "podsumowanie_wizualne.jpg")
     cv2.imwrite(save_path, final_collage)
-    print(f"✅ Zapisano kolaż: {save_path}")
+    print(f"Zapisano kolaż: {save_path}")
 # =============================================================================
 # 6. MAIN EXECUTION
 # =============================================================================
